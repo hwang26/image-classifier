@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Comic+Neue&display=swap');
+
+.judges{
+    width: 350.47px;
+    height: 260px;
+
+    background: #FDF8ED;
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p{
+        margin-left: 6%;
+        font-family: "Comic Neue";
+        text-align: left;
+        font-size: 18px;
+    }
+    p:last-child{
+        margin-bottom: 10%;
+    }
+}

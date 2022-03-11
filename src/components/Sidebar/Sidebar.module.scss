@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+.sideBarContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .sideBarButtons{
+        display: flex;
+        flex-direction: row;
+        width: 300px;
+    }
+
+}
+
+.judgesFlavorText{
+    width: 400px;
+    height: 47px;
+
+    font-family: Coiny;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+}
