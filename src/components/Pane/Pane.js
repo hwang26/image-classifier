@@ -1,41 +1,34 @@
 
-import {useState, useRef} from 'react';
 import * as ml5 from "ml5";
 import Sketch from 'react-p5';
-
 import styles from './Pane.module.scss';
 
 const Pane = (props) => {
-
-    let [ml5Result, setMl5] = useState();
-
-// p5 functionality
 
     let canvas; 
     let doodleClassifier;
 
 	const setup = (p5, canvasParentRef) => {
-		// use parent to render the canvas in this ref
-		// (without that p5 will render the canvas outside of your component)
+
     	canvas = p5.createCanvas(800, 600).parent(canvasParentRef);
         p5.background(255);
 
-        /*
+        
         const clearCanvas = () => {
             p5.background(255);
         }
 
-        clearButton = p5.createButton("CLEAR");
-        clearButton.mousePressed(clearCanvas);
-        */
-        // modelReady() is called when the model is loaded
+        // This is rendered clientside...I wonder if that's what allows us to select the button
+        let button = p5.select("button");
+        button.mousePressed(clearCanvas);
+
         doodleClassifier = ml5.imageClassifier('DoodleNet', modelReady);
     }
+
 
     const modelReady = () => {
         console.log('model loaded');
         doodleClassifier.classify(canvas, gotResults);
-
     }
 
     const gotResults = (error, results) => {
@@ -43,8 +36,9 @@ const Pane = (props) => {
             console.error(error);
             return;
         }
-        console.log(results[0].label);
-
+        //console.log(results[0].label);
+        let topResults = [results[0], results[1], results[2]];
+        props.setMl5(topResults);
         doodleClassifier.classify(canvas, gotResults);
 
     }
@@ -52,12 +46,10 @@ const Pane = (props) => {
     
     const draw = (p5) => {
         if (p5.mouseIsPressed) {
-            p5.strokeWeight(10);
+            p5.strokeWeight(35);
             p5.line(p5.mouseX, p5.mouseY, p5.pmouseX, p5.pmouseY);
         }
     }
-
-// end of p5 functionality
 
     return(
         <div className={styles.pane}>

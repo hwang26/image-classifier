@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
 
 .button{
-    width: 131px;
+    width: 145px;
     height: 60px;
 
     margin-top: 0;
@@ -9,13 +9,12 @@
     margin-left: 0;
     margin-right: 10%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     background: #9E9E92;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+
+    border-style: none;
 
     p{
 
@@ -27,8 +26,13 @@
         font-family: Coiny;
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
+        font-size: 25px;
 
         color: #FFFFFF;    
     }
+}
+
+.button:hover{
+    background: #27201F;
+    cursor: pointer;
 }
