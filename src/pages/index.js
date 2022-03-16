@@ -5,7 +5,21 @@ import Sidebar from '../components/Sidebar';
 import Prompt from '../components/Prompt';
 import Info from '../components/Info';
 
-export default function Home() {
+export async function getStaticProps(context) {
+	const response = await fetch("https://raw.githubusercontent.com/googlecreativelab/quickdraw-dataset/master/categories.txt");
+	const data = await response.text();
+
+	return {
+		props: {data} // will be passed to the page component as props
+	};
+}
+
+export default function Home({data}) {
+
+  // Convert line separated string into array of categories
+  let categories = data.split("\n");
+  // Remove last empty element
+  categories.pop();
 
   return (
     <div> 
@@ -16,7 +30,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Prompt />
+        <Prompt categories={categories}/>
         <Info />
         <Sidebar />
       </main>

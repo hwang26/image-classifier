@@ -46,7 +46,7 @@ const Pane = (props) => {
     
     const draw = (p5) => {
         if (p5.mouseIsPressed) {
-            p5.strokeWeight(35);
+            p5.strokeWeight(32);
             p5.line(p5.mouseX, p5.mouseY, p5.pmouseX, p5.pmouseY);
         }
     }
