@@ -27,7 +27,6 @@ const Pane = (props) => {
 
 
     const modelReady = () => {
-        console.log('model loaded');
         doodleClassifier.classify(canvas, gotResults);
     }
 
@@ -36,7 +35,6 @@ const Pane = (props) => {
             console.error(error);
             return;
         }
-        //console.log(results[0].label);
         let topResults = [results[0], results[1], results[2]];
         props.setMl5(topResults);
         doodleClassifier.classify(canvas, gotResults);

@@ -4,14 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o output",
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@storybook/preset-scss": "^1.0.3",
     "css-loader": "^5.1.1",
     "html-webpack-plugin": "^5.5.0",
     "ml5": "^0.10.3",
@@ -24,6 +23,7 @@
     "style-loader": "^2.0.0"
   },
   "devDependencies": {
+    "@storybook/preset-scss": "^1.0.3",
     "@babel/core": "^7.17.5",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
