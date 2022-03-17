@@ -24,9 +24,8 @@ jobs:
            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - run: npm install
       - run: npm run build # Builds the static files
-        with:
-          branch: gh-pages
-          folder: output
       - uses: stefanzweifel/git-auto-commit-action@v4 # This action will commit changes made in the Runner environment, and push the commit to the GitHub repo. The default commit message will be “Automated publish”.
         with:
           commit_message: Automated publish
+          branch: gh-pages
+          folder: output
