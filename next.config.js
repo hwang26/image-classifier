@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: 'https://hwang26.github.io/image-classifier/'
+  basePath: process.env.GITHUB_PAGES_PREFIX,
+  assetPrefix: process.env.GITHUB_PAGES_PREFIX
 }
 
 module.exports = nextConfig

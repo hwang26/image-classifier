@@ -3,8 +3,6 @@ import styles from "./Info.module.scss";
 
 const Info = () => {
 
-    console.log(infoIcon);
-
     return (
         <div className={styles.info}>
             <img src={infoIcon.src} />
