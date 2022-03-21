@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: process.env.GITHUB_PAGES_PREFIX,
-  assetPrefix: process.env.GITHUB_PAGES_PREFIX
+  basePath: '/image-classifier/', 
+  assetPrefix: '/image-classifier/' 
 }
 
 module.exports = nextConfig
