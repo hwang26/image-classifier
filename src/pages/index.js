@@ -27,6 +27,7 @@ export default function Home({data}) {
         <title>Image Classifier</title>
         <meta name="description" content="Demo of a deployed Next JS React App using DoodleNet image classifier through ml5js and p5js" />
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Comic+Neue&display=swap" rel="stylesheet" />
       </Head>
 
       <main className={styles.main}>
