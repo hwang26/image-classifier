@@ -10,7 +10,7 @@ const Pane = (props) => {
 
 	const setup = (p5, canvasParentRef) => {
 
-    	canvas = p5.createCanvas(800, 600).parent(canvasParentRef);
+    	canvas = p5.createCanvas(800, 580).parent(canvasParentRef);
         p5.background(255);
 
         
