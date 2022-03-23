@@ -6,7 +6,7 @@ const Button = (props) => {
     if(props.refresh === true){
         return(
             <a href=".">
-                <button ref={props.buttonRefCallback} className={styles.button} onClick={props.onClick}>
+                <button className={styles.button}>
                     <p>
                         {props.buttonLabel}
                     </p> 
@@ -16,7 +16,7 @@ const Button = (props) => {
     }
     else{
         return (
-            <button ref={props.buttonRefCallback} className={styles.button} onClick={props.onClick}>
+            <button className={styles.button}>
                 <p>
                     {props.buttonLabel}
                 </p> 

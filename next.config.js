@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.ENVIRONMENT === "PROD";
+
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/image-classifier', 
-  assetPrefix: '/image-classifier' 
+  basePath: isProd ? '/image-classifier' : '', 
+  assetPrefix: isProd ? '/image-classifier' : '', 
 }
 
 module.exports = nextConfig

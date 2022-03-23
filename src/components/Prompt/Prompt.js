@@ -17,11 +17,6 @@ const Prompt = ({categories}) => {
 			<div className={styles.prompt}>
 				<h1>Sketch It!</h1>
 				<h2>{prompt}</h2>
-				{/*
-					<a href="https://www.google.com">
-						<img src={refreshIcon} alt="Refresh Button for Prompt"/>
-					</a>
-				*/}
 			</div>
 
 	);

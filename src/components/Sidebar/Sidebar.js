@@ -11,58 +11,28 @@ const Pane = dynamic(
   { ssr: false }
 );
 
-const Sidebar = (props) => {
+const Sidebar = () => {
 
     let [ml5Results, setMl5] = useState(null);
 
-    let [ref, setRef] = useState(null);
-
     // Because the ml5 results are constantly being generated, the Sidebar component is constantly rerendered.
 
-    // The Pane remains consistent however
+    return (
+        <div className={styles.paneAndSidebar}>
 
-    // After the buttons render, I want the pane to attach the onclick handler
+            <Pane ml5Results={ml5Results} setMl5={setMl5} />
 
-    // First, I need to find out how to get clearButtonRef to actually reference the button
-
-    if(ref === null){
-
-        return(
-            <div className={styles.paneAndSidebar}>
-
-                <div className={styles.sideBarContainer}>
-                        <div className={styles.sideBarButtons}>
-                            <Button buttonLabel="Clear" buttonRefCallback={setRef} /> 
-                            <Button buttonLabel="Refresh" />
-                        </div>
-                        <p className={styles.judgesFlavorText}>What do the judges say...</p>
-                        <Judges ml5Results={ml5Results}/>
-                </div>
-            
+            <div className={styles.sideBarContainer}>
+                    <div className={styles.sideBarButtons}>
+                        <Button buttonLabel="Clear" /> 
+                        <Button buttonLabel="Refresh" refresh={true}/>
+                    </div>
+                    <p className={styles.judgesFlavorText}>What do the judges say...</p>
+                    <Judges ml5Results={ml5Results}/>
             </div>
-
-        );
-    }
-
-    else{
-
-        return (
-            <div className={styles.paneAndSidebar}>
-
-                <Pane ml5Results={ml5Results} setMl5={setMl5} clearButton={ref}/>
-
-                <div className={styles.sideBarContainer}>
-                        <div className={styles.sideBarButtons}>
-                            <Button buttonLabel="Clear" buttonRefCallback={setRef}/> 
-                            <Button buttonLabel="Refresh" refresh={true}/>
-                        </div>
-                        <p className={styles.judgesFlavorText}>What do the judges say...</p>
-                        <Judges ml5Results={ml5Results}/>
-                </div>
-            
-            </div>
-        );
-    }
+        
+        </div>
+    );
 }
 
 export default Sidebar;
