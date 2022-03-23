@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const isProd = process.env.ENVIRONMENT === "PROD";
+const isProd = process.env.NEXT_PUBLIC_ENVIRONMENT === "PROD";
 
 const nextConfig = {
   reactStrictMode: true,
