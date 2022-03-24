@@ -12,7 +12,7 @@ Users can clear the pane to reattempt the drawing or refresh the page to be give
 - Figma for prototyping
 - Storybook for component design
 - React, Node JS
-- Next JS for serverside React and file structure
+- Next JS for static site generation for React
 - SASS styling
 - p5 JS for drawing functionality
 - ml5 JS for image classification using DoodleNet model
